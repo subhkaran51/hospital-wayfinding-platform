@@ -1,0 +1,381 @@
+// campus-navigation/campus-navigation/src/data/routingGraph.js
+
+export const ROUTING_NODES = {
+  // PARKING
+  'park-garage': {
+    id: 'park-garage',
+    type: 'parking',
+    label: 'Parking Garage',
+    coords: { lng: -111.8920, lat: 40.7570 },
+    building: null,
+    floor: null,
+    accessible: true,
+  },
+  'park-er': {
+    id: 'park-er',
+    type: 'parking',
+    label: 'ER Parking',
+    coords: { lng: -111.8915, lat: 40.7582 },
+    building: null,
+    floor: null,
+    accessible: true,
+  },
+  'park-north': {
+    id: 'park-north',
+    type: 'parking',
+    label: 'North Parking',
+    coords: { lng: -111.8905, lat: 40.7606 },
+    building: null,
+    floor: null,
+    accessible: true,
+  },
+
+  // ENTRANCES
+  'ent-main': {
+    id: 'ent-main',
+    type: 'entrance',
+    label: 'Main Entrance',
+    coords: { lng: -111.8928, lat: 40.7574 },
+    building: 'B1',
+    floor: 'G',
+    accessible: true,
+    landmark: true,
+  },
+  'ent-wahlen': {
+    id: 'ent-wahlen',
+    type: 'entrance',
+    label: 'Wahlen Entrance',
+    coords: { lng: -111.8928, lat: 40.7610 },
+    building: 'B3',
+    floor: 'G',
+    accessible: true,
+    landmark: false,
+  },
+  'ent-sunny': {
+    id: 'ent-sunny',
+    type: 'entrance',
+    label: 'Sunnyside Entrance',
+    coords: { lng: -111.8862, lat: 40.7590 },
+    building: 'B8',
+    floor: 'G',
+    accessible: true,
+    landmark: false,
+  },
+
+  // BUILDING 1 ELEVATORS
+  'B1-G-elev': {
+    id: 'B1-G-elev',
+    type: 'elevator',
+    label: 'Elevator Bank A',
+    building: 'B1',
+    floor: 'G',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L1-elev': {
+    id: 'B1-L1-elev',
+    type: 'elevator',
+    label: 'Elevator Bank A',
+    building: 'B1',
+    floor: '1',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L2-elev': {
+    id: 'B1-L2-elev',
+    type: 'elevator',
+    label: 'Elevator Bank A',
+    building: 'B1',
+    floor: '2',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L3-elev': {
+    id: 'B1-L3-elev',
+    type: 'elevator',
+    label: 'Elevator Bank A',
+    building: 'B1',
+    floor: '3',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L4-elev': {
+    id: 'B1-L4-elev',
+    type: 'elevator',
+    label: 'Elevator Bank A',
+    building: 'B1',
+    floor: '4',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+
+  // BUILDING 1 STAIRS
+  'B1-G-stairs': {
+    id: 'B1-G-stairs',
+    type: 'stairs',
+    label: 'Main Stairwell',
+    building: 'B1',
+    floor: 'G',
+    coords: { lng: -111.8915, lat: 40.7583 },
+    accessible: false,
+  },
+
+  // BUILDING 1 CORRIDORS
+  'B1-G-corr': {
+    id: 'B1-G-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B1',
+    floor: 'G',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L1-corr': {
+    id: 'B1-L1-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B1',
+    floor: '1',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L2-corr': {
+    id: 'B1-L2-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B1',
+    floor: '2',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L3-corr': {
+    id: 'B1-L3-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B1',
+    floor: '3',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+  'B1-L4-corr': {
+    id: 'B1-L4-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B1',
+    floor: '4',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+  },
+
+  // BUILDING 3 CORRIDORS
+  'B3-G-corr': {
+    id: 'B3-G-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B3',
+    floor: 'G',
+    coords: { lng: -111.8895, lat: 40.7600 },
+    accessible: true,
+  },
+
+  // BUILDING 8 CORRIDORS
+  'B8-G-corr': {
+    id: 'B8-G-corr',
+    type: 'corridor',
+    label: 'Main Corridor',
+    building: 'B8',
+    floor: 'G',
+    coords: { lng: -111.8820, lat: 40.7580 },
+    accessible: true,
+  },
+
+  // BUILDING 14 ELEVATORS
+  'B14-G-elev': {
+    id: 'B14-G-elev',
+    type: 'elevator',
+    label: 'Elevator',
+    building: 'B14',
+    floor: 'G',
+    coords: { lng: -111.8930, lat: 40.7570 },
+    accessible: true,
+  },
+  'B14-L1-elev': {
+    id: 'B14-L1-elev',
+    type: 'elevator',
+    label: 'Elevator',
+    building: 'B14',
+    floor: '1',
+    coords: { lng: -111.8930, lat: 40.7570 },
+    accessible: true,
+  },
+  'B14-L2-elev': {
+    id: 'B14-L2-elev',
+    type: 'elevator',
+    label: 'Elevator',
+    building: 'B14',
+    floor: '2',
+    coords: { lng: -111.8930, lat: 40.7570 },
+    accessible: true,
+  },
+
+  // TUNNELS
+  'tunnel-B1-B14': {
+    id: 'tunnel-B1-B14',
+    type: 'tunnel',
+    label: 'Tunnel to Building 14',
+    building: null,
+    floor: 'G',
+    coords: { lng: -111.8925, lat: 40.7575 },
+    accessible: true,
+  },
+  'tunnel-B1-B3': {
+    id: 'tunnel-B1-B3',
+    type: 'tunnel',
+    label: 'Tunnel to Building 3',
+    building: null,
+    floor: 'G',
+    coords: { lng: -111.8905, lat: 40.7593 },
+    accessible: true,
+  },
+  'tunnel-B1-B4': {
+    id: 'tunnel-B1-B4',
+    type: 'tunnel',
+    label: 'Tunnel to Building 4',
+    building: null,
+    floor: 'G',
+    coords: { lng: -111.8885, lat: 40.7590 },
+    accessible: true,
+  },
+
+  // DEPARTMENTS
+  'ASI-B1G-001': {
+    id: 'ASI-B1G-001',
+    type: 'room',
+    label: 'Main Information Desk',
+    building: 'B1',
+    floor: 'G',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: true,
+  },
+  'ASI-B1G-002': {
+    id: 'ASI-B1G-002',
+    type: 'room',
+    label: 'Pharmacy',
+    building: 'B1',
+    floor: 'G',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: true,
+  },
+  'ASI-B1L1-001': {
+    id: 'ASI-B1L1-001',
+    type: 'room',
+    label: 'Radiology',
+    building: 'B1',
+    floor: '1',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: true,
+  },
+  'ASI-B1L2-001': {
+    id: 'ASI-B1L2-001',
+    type: 'room',
+    label: 'Cardiology',
+    building: 'B1',
+    floor: '2',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: true,
+  },
+  'ASI-B1L3-001': {
+    id: 'ASI-B1L3-001',
+    type: 'room',
+    label: 'ICU',
+    building: 'B1',
+    floor: '3',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: false,
+  },
+  'ASI-B1L4-001': {
+    id: 'ASI-B1L4-001',
+    type: 'room',
+    label: 'Ophthalmology',
+    building: 'B1',
+    floor: '4',
+    coords: { lng: -111.8912, lat: 40.7583 },
+    accessible: true,
+    landmark: false,
+  },
+  'ASI-B14G-001': {
+    id: 'ASI-B14G-001',
+    type: 'room',
+    label: 'Emergency Department',
+    building: 'B14',
+    floor: 'G',
+    coords: { lng: -111.8930, lat: 40.7570 },
+    accessible: true,
+    landmark: true,
+  },
+  'ASI-B14L1-001': {
+    id: 'ASI-B14L1-001',
+    type: 'room',
+    label: 'ED Treatment',
+    building: 'B14',
+    floor: '1',
+    coords: { lng: -111.8930, lat: 40.7570 },
+    accessible: true,
+    landmark: false,
+  },
+};
+
+export const ROUTING_EDGES = [
+  // PARKING TO ENTRANCE
+  { from: 'park-garage', to: 'ent-main', cost: 150, type: 'hallway', instruction: 'Walk to Main Entrance' },
+  { from: 'park-er', to: 'ent-main', cost: 80, type: 'hallway', instruction: 'Walk to Main Entrance' },
+  { from: 'park-north', to: 'ent-wahlen', cost: 120, type: 'hallway', instruction: 'Walk to Wahlen Entrance' },
+
+  // ENTRANCE TO BUILDING
+  { from: 'ent-main', to: 'B1-G-corr', cost: 30, type: 'hallway', instruction: 'Enter Building 1' },
+  { from: 'ent-wahlen', to: 'B3-G-corr', cost: 25, type: 'hallway', instruction: 'Enter Building 3' },
+  { from: 'ent-sunny', to: 'B8-G-corr', cost: 35, type: 'hallway', instruction: 'Enter Building 8' },
+
+  // BUILDING 1 GROUND FLOOR
+  { from: 'B1-G-corr', to: 'B1-G-elev', cost: 25, type: 'hallway', instruction: 'Walk to elevators' },
+  { from: 'B1-G-corr', to: 'B1-G-stairs', cost: 25, type: 'hallway', instruction: 'Walk to stairs' },
+  { from: 'B1-G-corr', to: 'ASI-B1G-001', cost: 15, type: 'hallway', instruction: 'Information Desk ahead' },
+  { from: 'B1-G-corr', to: 'ASI-B1G-002', cost: 20, type: 'hallway', instruction: 'Walk to pharmacy' },
+  { from: 'B1-G-corr', to: 'tunnel-B1-B3', cost: 50, type: 'tunnel', instruction: 'Enter tunnel to Building 3' },
+  { from: 'B1-G-corr', to: 'tunnel-B1-B14', cost: 40, type: 'tunnel', instruction: 'Enter tunnel to Building 14' },
+  { from: 'B1-G-corr', to: 'tunnel-B1-B4', cost: 60, type: 'tunnel', instruction: 'Enter tunnel to Building 4' },
+
+  // ELEVATORS
+  { from: 'B1-G-elev', to: 'B1-L1-elev', cost: 20, type: 'elevator', instruction: 'Take elevator to Level 1' },
+  { from: 'B1-L1-elev', to: 'B1-L2-elev', cost: 20, type: 'elevator', instruction: 'Continue to Level 2' },
+  { from: 'B1-L2-elev', to: 'B1-L3-elev', cost: 20, type: 'elevator', instruction: 'Continue to Level 3' },
+  { from: 'B1-L3-elev', to: 'B1-L4-elev', cost: 20, type: 'elevator', instruction: 'Continue to Level 4' },
+
+  // LEVEL CORRIDORS
+  { from: 'B1-L1-elev', to: 'B1-L1-corr', cost: 25, type: 'hallway', instruction: 'Exit elevator' },
+  { from: 'B1-L1-corr', to: 'ASI-B1L1-001', cost: 30, type: 'hallway', instruction: 'Walk to Radiology' },
+
+  { from: 'B1-L2-elev', to: 'B1-L2-corr', cost: 25, type: 'hallway', instruction: 'Exit elevator' },
+  { from: 'B1-L2-corr', to: 'ASI-B1L2-001', cost: 35, type: 'hallway', instruction: 'Walk to Cardiology' },
+
+  { from: 'B1-L3-elev', to: 'B1-L3-corr', cost: 25, type: 'hallway', instruction: 'Exit elevator' },
+  { from: 'B1-L3-corr', to: 'ASI-B1L3-001', cost: 40, type: 'hallway', instruction: 'Walk to ICU' },
+
+  { from: 'B1-L4-elev', to: 'B1-L4-corr', cost: 25, type: 'hallway', instruction: 'Exit elevator' },
+  { from: 'B1-L4-corr', to: 'ASI-B1L4-001', cost: 35, type: 'hallway', instruction: 'Walk to Ophthalmology' },
+
+  // TUNNELS
+  { from: 'tunnel-B1-B3', to: 'B3-G-corr', cost: 50, type: 'tunnel', instruction: 'Exit tunnel to Building 3' },
+  { from: 'tunnel-B1-B14', to: 'B14-G-elev', cost: 40, type: 'tunnel', instruction: 'Enter Building 14' },
+  { from: 'tunnel-B1-B4', to: 'B4-G-corr', cost: 60, type: 'tunnel', instruction: 'Exit tunnel to Building 4' },
+
+  // BUILDING 14
+  { from: 'B14-G-elev', to: 'ASI-B14G-001', cost: 25, type: 'hallway', instruction: 'Walk to ED' },
+  { from: 'B14-G-elev', to: 'B14-L1-elev', cost: 20, type: 'elevator', instruction: 'Take elevator to Level 1' },
+  { from: 'B14-L1-elev', to: 'ASI-B14L1-001', cost: 30, type: 'hallway', instruction: 'Walk to ED Treatment' },
+];
